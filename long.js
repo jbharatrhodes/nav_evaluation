@@ -69,7 +69,6 @@ const punctLists = [
     {name: 'greater than', tag: '>'},
     {name: 'less than', tag: '<'}
 ];
-
 function startTest(){
     const modalPath = path.join('file://', __dirname, 'openTest.html')
     let win = new BrowserWindow({ width: 500, height: 500 })
@@ -77,15 +76,11 @@ function startTest(){
     win.loadURL(modalPath)
     win.show();
 }
-
 document.getElementById('languageOptions').addEventListener('change', (evt) => {
     localStorage.removeItem("speechLanguage");
     var speechLanguage = document.getElementById('languageOptions').value;
     localStorage.setItem("speechLanguage", speechLanguage);
 });
-
-
-
 var speechConfig;
 if (authorizationToken) {
     speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(authorizationToken, serviceRegion.value);
@@ -126,7 +121,6 @@ function startRecognising(){
     };
     //mic_btn.style.color = 'red';
 }
-
 function stopRecognising(){
     if(startReco==1){
         startReco=0;
@@ -250,8 +244,6 @@ document.getElementById('editors').addEventListener('keyup', function(e){
 
     //}
 });
-
-
 document.getElementById('displaySpeech').addEventListener('keyup', function(e){
 
     e.preventDefault();
@@ -321,7 +313,6 @@ function displayTaskNumber(){
     starttesting();
     changeTasks();
 }
-
 function starttesting(){
     document.getElementById('displayInitialScreen').style.display= "none";
     document.getElementById('displayTaskNumber').style.display= "block";
@@ -349,8 +340,6 @@ function startPractice(){
     // closeCurrentFile(filepath2);
 
 //let filename='abc.html';
-
-
 }
 
 function starttasks(){
@@ -2069,7 +2058,6 @@ $('#keyboard input').click(function(e){
 
         shift = false;
     }
-
     var line = doc.getLine(cursor.line); // get the line contents
     if ($this.hasClass('backspace'))  {
         let pptr = {line: cursor.line, ch: cursor.ch};
@@ -2087,7 +2075,4 @@ $('#keyboard input').click(function(e){
 
         doc.replaceRange(character, cursor);
     }
-
-
 });
-
